@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordless Aquarium Vacuum Cleaner Help Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007AFF',
+                        secondary: '#5E5CE6',
+                        accent: '#30D158',
+                        text: '#1D1D1F',
+                        textSecondary: '#6E6E73',
+                        background: '#FAFAFA',
+                        card: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background:
+                radial-gradient(circle at 12% 12%, rgba(0, 122, 255, 0.08), transparent 28%),
+                radial-gradient(circle at 88% 8%, rgba(88, 142, 255, 0.06), transparent 32%),
+                linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 45%, #FAFAFA 100%);
+            min-height: 100vh;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.22s ease;
+        }
+        .faq-answer.open {
+            max-height: 400px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow:
+                0 18px 45px rgba(0, 0, 0, 0.08),
+                0 8px 18px rgba(0, 0, 0, 0.04);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #007AFF 0%, #0066CC 100%);
+            box-shadow: 0 8px 18px rgba(0, 122, 255, 0.25);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0066CC 0%, #007AFF 100%);
+        }
+        .btn-accent {
+            background: linear-gradient(135deg, #30D158 0%, #28A745 100%);
+            box-shadow: 0 8px 18px rgba(48, 209, 88, 0.25);
+        }
+        .btn-accent:hover {
+            background: linear-gradient(135deg, #28A745 0%, #30D158 100%);
+        }
+        /* 弹窗样式 */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0,0,0,0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+        .modal-overlay.show {
+            display: flex;
+        }
+        .modal-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px;
+            max-width: 340px;
+            width: 100%;
+            position: relative;
+        }
+        .close-modal {
+            position: absolute;
+            top:12px;
+            right:14px;
+            font-size:22px;
+            color:#666;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body class="font-sans px-5 py-10 text-text">
+    <div class="max-w-xl mx-auto">
+        <!-- 顶部品牌与标题 -->
+        <div class="text-center mb-12">
+            <div class="mb-8">
+                <span class="text-xl font-semibold tracking-widest text-text">ZONARIK</span>
+            </div>
+            <h1 class="text-[clamp(1.7rem,4.5vw,2rem)] font-bold text-text leading-snug mb-4">
+                Cordless Aquarium Vacuum Cleaner
+            </h1>
+            <p class="text-[clamp(0.95rem,2vw,1.1rem)] text-textSecondary leading-relaxed max-w-sm mx-auto">
+                Troubleshooting &amp; support
+            </p>
+        </div>
+
+        <!-- Important Usage Tip -->
+        <div class="glass-card rounded-2xl p-5 mb-8 shadow-sm">
+            <div class="flex items-center gap-2 mb-3">
+                <i class="fa fa-lightbulb-o text-primary"></i>
+                <span class="font-semibold text-text">Important Usage Tip</span>
+            </div>
+            <p class="text-textSecondary text-sm leading-relaxed">
+                Ensure the charging port waterproof flap is closed and the filter is properly fitted in the primary filter head prior to use.
+            </p>
+        </div>
+
+        <!-- FAQ 故障排除模块 -->
+        <div class="glass-card rounded-2xl p-6 mb-8 shadow-sm">
+            <div class="flex items-center gap-2 mb-4">
+                <i class="fa fa-wrench text-primary"></i>
+                <span class="font-semibold text-text">Troubleshooting</span>
+            </div>
+
+            <!-- FAQ 1 -->
+            <div class="border-b border-gray-100">
+                <button class="w-full py-4 flex justify-between items-center text-left faq-trigger">
+                    <span class="text-text font-medium">Vacuum does not start or suction is weak</span>
+                    <span class="text-textSecondary text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="text-textSecondary pb-4 text-sm leading-relaxed">
+                        1. Ensure the unit is fully charged.<br>
+                        2. Check that the filter and nozzle are not clogged with debris.<br>
+                        3. Confirm the motor head is fully submerged in water.<br>
+                        4. Clean or replace the filter sponge if it is dirty.
+                    </p>
+                </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="border-b border-gray-100">
+                <button class="w-full py-4 flex justify-between items-center text-left faq-trigger">
+                    <span class="text-text font-medium">Debris escapes back out from filter</span>
+                    <span class="text-textSecondary text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="text-textSecondary pb-4 text-sm leading-relaxed">
+                        1. Check whether the filter sponge is installed tightly and correctly.<br>
+                        2. The sponge may be worn out; replace it with a new filter.<br>
+                        3. Do not overload the waste‑collection chamber. Empty it frequently.
+                    </p>
+                </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="border-b border-gray-100">
+                <button class="w-full py-4 flex justify-between items-center text-left faq-trigger">
+                    <span class="text-text font-medium">Unit won't charge / charging light not working</span>
+                    <span class="text-textSecondary text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="text-textSecondary pb-4 text-sm leading-relaxed">
+                        1. Verify the USB‑C cable and power adapter are working properly.<br>
+                        2. Check the charging port for dirt or water residue, dry it completely.<br>
+                        3. If the battery has been stored for a very long time, it may need a recovery charge.<br>
+                        4. Contact support if there is still no response.
+                    </p>
+                </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="border-b border-gray-100">
+                <button class="w-full py-4 flex justify-between items-center text-left faq-trigger">
+                    <span class="text-text font-medium">How long does battery last on each speed?</span>
+                    <span class="text-textSecondary text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="text-textSecondary pb-4 text-sm leading-relaxed">
+                        1. Low speed: more than 5 hours runtime.<br>
+                        2. Medium speed: 1‑1 hour 20 minutes runtime.<br>
+                        3. High speed: 30‑45 minutes runtime.<br>
+                        4. Actual time may vary depending on debris load and battery age.
+                    </p>
+                </div>
+            </div>
+            <!-- FAQ 5 -->
+            <div class="border-b border-gray-100">
+                <button class="w-full py-4 flex justify-between items-center text-left faq-trigger">
+                    <span class="text-text font-medium">What is the minimum operating water level?</span>
+                    <span class="text-textSecondary text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="text-textSecondary pb-4 text-sm leading-relaxed">
+                        1. Keep the minimum water‑level position (approx. 2 cm below power switch) submerged.<br>
+                        2. Never operate the cleaner out of water, this will damage the pump.
+                    </p>
+                </div>
+            </div>
+            <!-- FAQ 6 -->
+            <div>
+                <button class="w-full py-4 flex justify-between items-center text-left faq-trigger">
+                    <span class="text-text font-medium">How to clean and maintain filter parts?</span>
+                    <span class="text-textSecondary text-xl faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="text-textSecondary pb-4 text-sm leading-relaxed">
+                        1. Open filter chamber cover, remove filter and rinse with clean water after every use.<br>
+                        2. Do NOT wash filter with soap or chemicals.<br>
+                        3. Air‑dry all components before storage.<br>
+                        4. Replace filter if it gets damaged.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 指示灯模块 -->
+        <div class="glass-card rounded-2xl p-5 mb-6 shadow-sm">
+            <div class="flex items-center gap-2 mb-3">
+                <i class="fa fa-bolt text-primary"></i>
+                <span class="font-semibold text-text">Charging Indicator Status</span>
+            </div>
+            <p class="text-textSecondary text-sm leading-relaxed mb-4">
+                Refer to the indicator light status below to confirm charging progress.
+            </p>
+            <div class="flex items-center gap-3 mb-3">
+                <span class="w-4 h-4 rounded-full bg-red-500"></span>
+                <span class="text-textSecondary text-sm">Red Light: Charging in progress</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded-full bg-green-500"></span>
+                <span class="text-textSecondary text-sm">Green Light: Fully charged</span>
+            </div>
+        </div>
+
+        <!-- 底部按钮区 -->
+        <div class="flex flex-col gap-3 mb-8">
+            <button id="openQrModalBtn" class="w-full btn-primary text-white font-medium py-4 rounded-full flex items-center justify-center gap-2 transition-all">
+                <i class="fa fa-comments"></i>
+                Live Support
+            </button>
+            <a href="mailto:contact@zonariktools.com" class="w-full bg-slate-600 hover:bg-slate-700 text-white font-medium py-4 rounded-full flex items-center justify-center gap-2 transition-all">
+                <i class="fa fa-envelope"></i>
+                Contact Customer Service
+            </a>
+            <a href="https://www.mediafire.com/file/vlroj65bf119v4s/User_Manual.pdf/file" target="_blank" class="w-full btn-accent text-white font-medium py-4 rounded-full flex items-center justify-center gap-2 transition-all">
+                <i class="fa fa-file-pdf-o"></i>
+                Download Full User Manual
+            </a>
+        </div>
+
+        <!-- 保修区块 -->
+        <div class="glass-card rounded-2xl p-6 text-center shadow-sm mb-6">
+            <p class="text-textSecondary text-sm leading-relaxed">
+                <i class="fa fa-shield text-primary mr-1"></i>
+                <strong class="text-text">Worry‑Free Warranty:</strong> All ZONARIK products come with a 1‑Year Manufacturer Warranty. If you experience any hardware issues, please contact us directly for a quick resolution.
+            </p>
+        </div>
+
+        <!-- 版权独立分隔区 -->
+        <div class="text-center">
+            <div class="w-full h-px bg-gray-200 mb-6"></div>
+            <p class="text-textSecondary text-xs">
+                © 2026 ZONARIK. All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    <!-- WhatsApp QR弹窗 -->
+    <div id="qrModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal">&times;</span>
+            <div class="text-center">
+                <h4 class="text-lg font-semibold mb-3">ZONARIK After‑Sales Service</h4>
+                <img src="https://github.com/melalayy-design/ZONARIK/blob/main/WhatsApp%20QR%20code.png?raw=true" alt="WhatsApp QR Code" class="w-full">
+                <p class="text-sm text-textSecondary mt-3">Scan QR code for WhatsApp support</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-trigger').forEach(btn=>{
+            btn.addEventListener('click',function(){
+                const wrapper = this.parentElement;
+                const answer = wrapper.querySelector('.faq-answer');
+                const icon = this.querySelector('.faq-icon');
+                answer.classList.toggle('open');
+                if(answer.classList.contains('open')){
+                    icon.textContent = '-';
+                }else{
+                    icon.textContent = '+';
+                }
+            })
+        })
+
+        // QR弹窗逻辑
+        const modal = document.getElementById('qrModal');
+        const openBtn = document.getElementById('openQrModalBtn');
+        const closeBtn = document.querySelector('.close-modal');
+
+        openBtn.addEventListener('click', ()=>{
+            modal.classList.add('show');
+        })
+        closeBtn.addEventListener('click', ()=>{
+            modal.classList.remove('show');
+        })
+        // 点击遮罩关闭弹窗
+        modal.addEventListener('click',(e)=>{
+            if(e.target === modal){
+                modal.classList.remove('show');
+            }
+        })
+    </script>
+</body>
+</html>
+<!-- （注：内容由AI生成） -->
